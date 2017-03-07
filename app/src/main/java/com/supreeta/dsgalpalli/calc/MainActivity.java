@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,Communicator {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +37,17 @@ public class MainActivity extends AppCompatActivity
 //        });
 
         android.app.Fragment fragment = new FirstFragment();
+        android.app.Fragment fragment2 = new TextFragment();
+
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.fragment1, fragment);
         fragmentTransaction.commit();
+
+        FragmentManager fm2 = getFragmentManager();
+        FragmentTransaction fragmentTransaction2 = fm2.beginTransaction();
+        fragmentTransaction2.replace(R.id.fragmentText, fragment2);
+        fragmentTransaction2.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -109,5 +116,12 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void respond(String data) {
+        FragmentManager manager=getFragmentManager();
+        TextFragment textFragment = (TextFragment) manager.findFragmentById(R.id.fragmentText);
+        textFragment.changeText(data);
     }
 }

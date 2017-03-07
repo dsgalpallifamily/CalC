@@ -1,19 +1,22 @@
 package com.supreeta.dsgalpalli.calc;
 
-import android.app.Activity;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptEngine;
+import javax.script.ScriptException;
 
 public class FirstFragment extends Fragment {
 
+    boolean add,sub,div,mul;
     Button BtnSeven, BtnEight, BtnNine, BtnFour, BtnFive, BtnSix, BtnOne, BtnTwo,BtnThree, BtnZero, BtnDot, BtnClear, BtnAdd, BtnMultiply, BtnDivide, BtnSubtract;
+    Communicator comm;
+    String value="";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,22 +35,47 @@ public class FirstFragment extends Fragment {
         BtnNine=(Button)view.findViewById(R.id.btnNine);
         BtnZero=(Button)view.findViewById(R.id.btnZero);
         BtnDivide=(Button)view.findViewById(R.id.btnDivide);
-        BtnMultiply=(Button)view.findViewById(R.id.btnDivide);
+        BtnMultiply=(Button)view.findViewById(R.id.btnMultiply);
         BtnAdd=(Button)view.findViewById(R.id.btnAdd);
         BtnSubtract=(Button)view.findViewById(R.id.btnSubtract);
         BtnDot=(Button)view.findViewById(R.id.btnDot);
+        BtnClear=(Button)view.findViewById(R.id.btnClear);
 
-        BtnOne.setOnClickListener(new View.OnClickListener() {
+        return view;
+
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        comm= (Communicator) getActivity();
+     //   BtnOne= (Button) getActivity().findViewById(R.id.btnOne);
+        BtnOne.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
+                value=value+"1";
+                comm.respond(value);
             }
         });
+
+        BtnSeven.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                value=value+"7";
+                comm.respond(value);
+            }
+        });
+
+
 
         BtnTwo.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                value=value+"2";
+                comm.respond(value);
             }
         });
 
@@ -55,6 +83,8 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value = value + "3";
+                comm.respond(value);
             }
         });
 
@@ -62,6 +92,8 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+"4";
+                comm.respond(value);
             }
         });
 
@@ -69,6 +101,8 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+"5";
+                comm.respond(value);
             }
         });
 
@@ -76,20 +110,19 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+"6";
+                comm.respond(value);
             }
         });
 
-        BtnSeven.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-            }
-        });
 
         BtnEight.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                value=value+"8";
+                comm.respond(value);
             }
         });
 
@@ -97,6 +130,8 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+"9";
+                comm.respond(value);
             }
         });
 
@@ -104,6 +139,8 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+"0";
+                comm.respond(value);
             }
         });
 
@@ -111,6 +148,11 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                if (value != null) {
+                    value = value + "/";
+                    comm.respond(value);
+                }
+                div=true;
             }
         });
 
@@ -118,6 +160,9 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+"*";
+                comm.respond(value);
+                mul=true;
             }
         });
 
@@ -125,6 +170,9 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+"+";
+                comm.respond(value);
+                add=true;
             }
         });
 
@@ -132,6 +180,9 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+"-";
+                comm.respond(value);
+                sub=true;
             }
         });
 
@@ -139,11 +190,39 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                value=value+".";
+                comm.respond(value);
             }
         });
 
-        return view;
+//        BtnClear.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                if (value != null && value.length() > 0) {
+//                    value = value.substring(0, value.length()-1);
+//                }
+//                comm.respond(value);
+//            }
+//        });
+        BtnClear.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                ScriptEngineManager mgr = new ScriptEngineManager();
+                ScriptEngine engine = mgr.getEngineByName("JavaScript");
+                String foo = "40+2";
+                try {
+                    System.out.println(engine.eval(foo));
+                } catch (ScriptException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
     }
-
 }
+/*
+str.substring(0,str.length()-1);
+ */
