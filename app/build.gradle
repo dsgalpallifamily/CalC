@@ -26,5 +26,5 @@ dependencies {
     compile files('libs/jsr-223-1.0-pr.jar')
     compile files('libs/jep-2.4.1.jar')
     compile files('libs/jsr223.jar')
-
+    compile files('libs/javaluator-3.0.1.jar')
 }

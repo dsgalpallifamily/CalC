@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -10,24 +11,35 @@
 
     <!--<TextView-->
         <!--android:id="@+id/displayTextview"-->
+            <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="100dp" />-->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+         <fragment
+                 android:name="com.supreeta.dsgalpalli.calc.TextFragment"
+                 android:id="@+id/fragmentDisplay"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_weight="0.3"/>
+        <FrameLayout
+            android:id="@+id/frameLayoutId"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7">
+        </FrameLayout>
+    </LinearLayout>
+    <!--<fragment-->
+
+        <!--android:layout_below="@+id/fragmentDisplay"-->
+        <!--android:name="com.supreeta.dsgalpalli.calc.SimpleCalFragment"-->
+        <!--android:id="@+id/fragmentSimpleCal"-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="100dp" />-->
-
-    <fragment
-        android:name="com.supreeta.dsgalpalli.calc.TextFragment"
-        android:id="@+id/fragmentText"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_alignParentEnd="true" />
-
-    <fragment
-        android:layout_below="@+id/fragmentText"
-        android:name="com.supreeta.dsgalpalli.calc.FirstFragment"
-        android:id="@+id/fragment1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false" />
+        <!--android:layout_height="match_parent"-->
+       <!--/>-->
 
     <!--<LinearLayout-->
         <!--android:layout_below="@+id/displayTextview"-->

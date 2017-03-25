@@ -12,10 +12,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.fathzer.soft.javaluator.DoubleEvaluator;
+
 
 public class TextFragment extends Fragment {
 
-    TextView textView;
+    TextView textView, textResult;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -27,10 +29,17 @@ public class TextFragment extends Fragment {
     public void changeText(String data){
         textView.setText(data);
     }
+    public void changeResult(String data){
+       // data+=data;
+        Double result = new DoubleEvaluator().evaluate(data);
+        textResult.setText(String.valueOf(result));
+    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         textView= (TextView) getActivity().findViewById(R.id.displayText);
+        textResult= (TextView) getActivity().findViewById(R.id.displayResult);
+
     }
 }
