@@ -132,7 +132,9 @@ public class MainActivity extends AppCompatActivity
 
         FragmentManager manager=getFragmentManager();
         TextFragment textFragment = (TextFragment) manager.findFragmentById(R.id.fragmentDisplay);
-        textFragment.changeText(data);
+            textFragment.changeText(data);
+
+
     }
 
     @Override

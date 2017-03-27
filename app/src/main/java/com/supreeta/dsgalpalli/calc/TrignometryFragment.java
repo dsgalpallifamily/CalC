@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 public class TrignometryFragment extends Fragment {
 
@@ -40,7 +39,7 @@ public class TrignometryFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                value = value + "sin30";
+                value = value + "sin";
                 comm.respond(value);
             }
         });
@@ -49,11 +48,44 @@ public class TrignometryFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-//                value = value + "cos";
-//                comm.respond(value);
-                Double result = new DoubleEvaluator().evaluate(value);
-                comm.respond(String.valueOf(result));
+                value = value + "cos";
+                comm.respond(value);
+            }
+        });
 
+        BtnTan.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = value + "tan";
+                comm.respond(value);
+            }
+        });
+
+        BtnLn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = value + "ln";
+                comm.respond(value);
+            }
+        });
+
+        BtnLog.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = value + "log";
+                comm.respond(value);
+            }
+        });
+
+        BtnE.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = value + "e";
+                comm.respond(value);
             }
         });
 
