@@ -101,8 +101,4 @@ public class TrignometryFragment extends Fragment {
             }
         });
     }
-
-
-
-
 }

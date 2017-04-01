@@ -10,21 +10,31 @@ import android.widget.TextView;
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 
+import java.util.ArrayList;
 
-public class TextFragment extends Fragment {
+
+public class DisplayResultFragment extends Fragment {
 
     TextView textView, textResult;
+    ArrayList<String> list=new ArrayList<String>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_text, container, false);
+        View view = inflater.inflate(R.layout.fragment_result_display, container, false);
 
         return view;
     }
 
     public void changeText(String data){
-        String val = data;
-        textView.setText(data);
+
+        list.add(data);
+
+        StringBuilder builder = new StringBuilder();
+        for (String details : list) {
+            builder.append(details);
+        }
+
+        textView.setText(builder.toString());
     }
     public void changeResult(String data){
         Double result = new DoubleEvaluator().evaluate(data);

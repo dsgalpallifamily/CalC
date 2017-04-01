@@ -12,9 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,Communicator {
 
@@ -39,7 +36,7 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.add(R.id.frameLayoutId, fragment);
 
-        android.app.Fragment fragment2 = new TextFragment();
+        android.app.Fragment fragment2 = new DisplayResultFragment();
         fragmentTransaction.replace(R.id.fragmentDisplay, fragment2);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
@@ -131,8 +128,8 @@ public class MainActivity extends AppCompatActivity
     public void respond(String data) {
 
         FragmentManager manager=getFragmentManager();
-        TextFragment textFragment = (TextFragment) manager.findFragmentById(R.id.fragmentDisplay);
-            textFragment.changeText(data);
+        DisplayResultFragment displayResultFragment = (DisplayResultFragment) manager.findFragmentById(R.id.fragmentDisplay);
+            displayResultFragment.changeText(data);
 
 
     }
@@ -140,7 +137,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void result(String data) {
         FragmentManager manager=getFragmentManager();
-        TextFragment textFragment = (TextFragment) manager.findFragmentById(R.id.fragmentDisplay);
-        textFragment.changeResult(data);
+        DisplayResultFragment displayResultFragment = (DisplayResultFragment) manager.findFragmentById(R.id.fragmentDisplay);
+        displayResultFragment.changeResult(data);
     }
 }
