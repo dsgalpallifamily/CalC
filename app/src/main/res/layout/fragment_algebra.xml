@@ -3,8 +3,164 @@
     android:layout_height="match_parent"
     tools:context="com.supreeta.dsgalpalli.calc.AlgebraFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text=""
+            android:id="@+id/btnSlideBack"
+            android:layout_gravity="right|top" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.80"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txtScreen"
+            android:background="@color/colorGrey"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <Button
+                    android:id="@+id/btnSinInverse"
+                    android:layout_width="0dp"
+                    android:background="@color/colorGrey"
+                    android:textColor="@color/colorWhite"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="Sin-1" />
+                <Button
+                    android:id="@+id/btnCosInverse"
+                    android:layout_width="0dp"
+                    android:background="@color/colorGrey"
+                    android:textColor="@color/colorWhite"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="cos-1" />
+                <Button
+                    android:id="@+id/btnTanInverse"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="tan-1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnSine"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="sin" />
+                <Button
+                    android:id="@+id/btnCos"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="cos" />
+                <Button
+                    android:id="@+id/btnTan"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="tan" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnLN"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="ln" />
+                <Button
+                    android:id="@+id/btnLog"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="log" />
+                <Button
+                    android:id="@+id/btnPie"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="pie" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnE"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="E" />
+                <Button
+                    android:id="@+id/btnOpenBrac"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="(" />
+                <Button
+                    android:id="@+id/btnCloseBrac"
+                    android:layout_width="0dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorGrey"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text=")" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

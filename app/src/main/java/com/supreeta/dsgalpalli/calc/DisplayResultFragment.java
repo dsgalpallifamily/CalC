@@ -3,6 +3,7 @@ package com.supreeta.dsgalpalli.calc;
 
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,10 +36,43 @@ public class DisplayResultFragment extends Fragment {
         }
 
         textView.setText(builder.toString());
+
+//        String joined = TextUtils.join("",list);
+//        textView.setText(joined);
+//        String text="";
+//        for (String details : list) {
+//            textView.setText(details);
+//        }
+    //    textView.setText(text);
+
+//        for(int i=0;i<list.size();i++){
+//            textView.setText(""+list.get(i));
+//        }
+
     }
-    public void changeResult(String data){
-        Double result = new DoubleEvaluator().evaluate(data);
+    public void changeResult(){
+        StringBuilder builder = new StringBuilder();
+        for (String details : list) {
+            builder.append(details);
+        }
+        String val=builder.toString();
+        String lastDigit = val.substring(val.length()-1);
+                if(lastDigit.equals("+")){
+                    val = val.substring(0, val.length()-1);
+                }
+        Double result = new DoubleEvaluator().evaluate(val);
         textResult.setText(String.valueOf(result));
+    }
+
+    public void clearText(){
+        list.remove(list.size()-1);
+
+        StringBuilder builder = new StringBuilder();
+        for (String details : list) {
+            builder.append(details);
+        }
+
+        textView.setText(builder.toString());
     }
 
     @Override

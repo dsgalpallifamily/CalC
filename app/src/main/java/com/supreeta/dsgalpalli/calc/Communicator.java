@@ -5,6 +5,7 @@ package com.supreeta.dsgalpalli.calc;
  */
 public interface Communicator {
     public void respond(String data);
-    public void result(String data);
+    public void result();
+    public void clear();
 
 }

@@ -14,7 +14,7 @@ public class TrignometryFragment extends Fragment {
 
     Communicator comm;
     String value="";
-    Button BtnSine, BtnCos, BtnTan, BtnLn, BtnLog, BtnE, BtnSlideBack;
+    Button BtnSine, BtnCos, BtnTan, BtnLn, BtnLog, BtnE, BtnSlideBack,BtnSineInverse, BtnCosInverse, BtnTanInverse, BtnOpenBrac, BtnCloseBrac;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -23,6 +23,11 @@ public class TrignometryFragment extends Fragment {
         BtnSine=(Button) view.findViewById(R.id.btnSine);
         BtnCos=(Button) view.findViewById(R.id.btnCos);
         BtnTan=(Button) view.findViewById(R.id.btnTan);
+        BtnSineInverse=(Button) view.findViewById(R.id.btnSinInverse);
+        BtnCosInverse=(Button) view.findViewById(R.id.btnCosInverse);
+        BtnTanInverse=(Button) view.findViewById(R.id.btnTanInverse);
+        BtnOpenBrac=(Button) view.findViewById(R.id.btnOpenBrac);
+        BtnCloseBrac=(Button) view.findViewById(R.id.btnCloseBrac);
         BtnLn=(Button) view.findViewById(R.id.btnLN);
         BtnLog=(Button) view.findViewById(R.id.btnLog);
         BtnE=(Button) view.findViewById(R.id.btnE);
@@ -39,7 +44,7 @@ public class TrignometryFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                value = value + "sin";
+                value = "sin";
                 comm.respond(value);
             }
         });
@@ -48,7 +53,7 @@ public class TrignometryFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                value = value + "cos";
+                value = "cos";
                 comm.respond(value);
             }
         });
@@ -57,16 +62,42 @@ public class TrignometryFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                value = value + "tan";
+                value = "tan";
                 comm.respond(value);
             }
         });
 
+        BtnSineInverse.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = "sin-1";
+                comm.respond(value);
+            }
+        });
+
+        BtnCosInverse.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = "cos-1";
+                comm.respond(value);
+            }
+        });
+
+        BtnTanInverse.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = "tan-1";
+                comm.respond(value);
+            }
+        });
         BtnLn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                value = value + "ln";
+                value = "ln";
                 comm.respond(value);
             }
         });
@@ -75,7 +106,7 @@ public class TrignometryFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                value = value + "log";
+                value = "log";
                 comm.respond(value);
             }
         });
@@ -84,10 +115,29 @@ public class TrignometryFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                value = value + "e";
+                value = "e";
                 comm.respond(value);
             }
         });
+
+        BtnOpenBrac.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = "(";
+                comm.respond(value);
+            }
+        });
+
+        BtnCloseBrac.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                value = ")";
+                comm.respond(value);
+            }
+        });
+
 
         BtnSlideBack.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -60,7 +60,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value=value+"1";
+                value="1";
                 comm.respond(value);
             }
         });
@@ -69,7 +69,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value = value + "7";
+                value = "7";
                 comm.respond(value);
             }
         });
@@ -80,7 +80,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value = value + "2";
+                value = "2";
                 comm.respond(value);
             }
         });
@@ -89,7 +89,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value = value + "3";
+                value = "3";
                 comm.respond(value);
             }
         });
@@ -98,7 +98,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value = value + "4";
+                value = "4";
                 comm.respond(value);
             }
         });
@@ -107,7 +107,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value=value+"5";
+                value="5";
                 comm.respond(value);
             }
         });
@@ -116,7 +116,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value=value+"6";
+                value="6";
                 comm.respond(value);
             }
         });
@@ -127,7 +127,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value = value + "8";
+                value = "8";
                 comm.respond(value);
             }
         });
@@ -136,7 +136,8 @@ public class
 
             @Override
             public void onClick(View v) {
-                value=value+"9";
+
+                value="9";
                 comm.respond(value);
             }
         });
@@ -145,7 +146,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value=value+"00";
+                value="00";
                 comm.respond(value);
             }
         });
@@ -154,7 +155,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value=value+"(";
+                value="(";
                 comm.respond(value);
             }
         });
@@ -175,7 +176,7 @@ public class
 
             @Override
             public void onClick(View v) {
-                value=value+"0";
+                value="0";
                 comm.respond(value);
             }
         });
@@ -187,7 +188,7 @@ public class
                 String lastDigit = value.substring(value.length()-1);
                 if (!lastDigit.equals("/") && value != null && value.length()>0 )
                 {
-                    value = value + "/";
+                    value = "/";
                     comm.respond(value);
                 }
                 div=true;
@@ -200,7 +201,7 @@ public class
             public void onClick(View v) {
                 String lastDigit = value.substring(value.length()-1);
                 if (!lastDigit.equals("*") && value != null && value.length()>0 ) {
-                    value = value + "*";
+                    value = "*";
                     comm.respond(value);
                     mul = true;
                 }
@@ -215,7 +216,7 @@ public class
 
                     String lastDigit = value.substring(value.length()-1);
                     if (!lastDigit.equals("+") && value != null && value.length()>0 ) {
-                        value = value + "+";
+                        value = "+";
                         count=0;
                         comm.respond(value);
                         add = true;
@@ -229,7 +230,7 @@ public class
             public void onClick(View v) {
                 String lastDigit = value.substring(value.length()-1);
                 if (!lastDigit.equals("-") && value != null && value.length()>0 ) {
-                    value = value + "-";
+                    value = "-";
                     comm.respond(value);
                     sub = true;
                 }
@@ -241,7 +242,7 @@ public class
             @Override
             public void onClick(View v) {
                 if (count==0 && value!=null) {
-                    value = value + ".";
+                    value = ".";
                     count++;
                     comm.respond(value);
                 }
@@ -267,16 +268,17 @@ public class
 
             @Override
             public void onClick(View v) {
-                if (value != null && value.length() > 0) {
-                    value = value.substring(0, value.length()-1);
-                }
-                comm.respond(value);
-
-                String lastDigit = value.substring(value.length()-1);
-                if(lastDigit.equals("+")){
-                    value = value.substring(0, value.length()-1);
-                    comm.result(value);
-                }
+                comm.clear();
+//                if (value != null && value.length() > 0) {
+//                    value = value.substring(0, value.length()-1);
+//                }
+//                comm.respond(value);
+//
+//                String lastDigit = value.substring(value.length()-1);
+//                if(lastDigit.equals("+")){
+//                    value = value.substring(0, value.length()-1);
+//                    comm.result(value);
+//                }
             }
         });
         BtnEqual.setOnClickListener(new View.OnClickListener() {
@@ -284,7 +286,7 @@ public class
             @Override
             public void onClick(View v) {
 
-                comm.result(value);
+                comm.result();
             }
         });
 

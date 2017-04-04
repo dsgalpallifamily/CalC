@@ -32,32 +32,32 @@
             android:layout_height="0dp"
             android:layout_weight="1">
             <Button
-                android:id="@+id/btnInverse"
+                android:id="@+id/btnSinInverse"
                 android:layout_width="0dp"
                 android:background="@color/colorGrey"
                 android:textColor="@color/colorWhite"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="25sp"
-                android:text="INV" />
+                android:text="Sin-1" />
             <Button
-                android:id="@+id/btnRAD"
+                android:id="@+id/btnCosInverse"
                 android:layout_width="0dp"
                 android:background="@color/colorGrey"
                 android:textColor="@color/colorWhite"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="25sp"
-                android:text="RAD" />
+                android:text="cos-1" />
             <Button
-                android:id="@+id/btnPercent"
+                android:id="@+id/btnTanInverse"
                 android:layout_width="0dp"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorGrey"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="25sp"
-                android:text="%"/>
+                android:text="tan-1"/>
 
         </LinearLayout>
 
@@ -119,22 +119,6 @@
                 android:textSize="25sp"
                 android:text="log" />
             <Button
-                android:id="@+id/btnFactorial"
-                android:layout_width="0dp"
-                android:textColor="@color/colorWhite"
-                android:background="@color/colorGrey"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="25sp"
-                android:text="!" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <Button
                 android:id="@+id/btnPie"
                 android:layout_width="0dp"
                 android:textColor="@color/colorWhite"
@@ -142,7 +126,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="25sp"
-                android:text="PIE" />
+                android:text="pie" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
             <Button
                 android:id="@+id/btnE"
                 android:layout_width="0dp"
@@ -151,23 +142,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="25sp"
-                android:text="e" />
-            <Button
-                android:id="@+id/btnPower"
-                android:layout_width="0dp"
-                android:textColor="@color/colorWhite"
-                android:background="@color/colorGrey"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="25sp"
-                android:text="^" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
+                android:text="E" />
             <Button
                 android:id="@+id/btnOpenBrac"
                 android:layout_width="0dp"
@@ -186,16 +161,9 @@
                 android:layout_weight="1"
                 android:textSize="25sp"
                 android:text=")" />
-            <Button
-                android:id="@+id/btnRoot"
-                android:layout_width="0dp"
-                android:textColor="@color/colorWhite"
-                android:background="@color/colorGrey"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="25sp"
-                android:text="root" />
         </LinearLayout>
+
+
     </LinearLayout>
     </LinearLayout>
 </FrameLayout>

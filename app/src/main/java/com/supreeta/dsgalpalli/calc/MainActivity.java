@@ -133,11 +133,16 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
     @Override
-    public void result(String data) {
+    public void clear() {
         FragmentManager manager=getFragmentManager();
         DisplayResultFragment displayResultFragment = (DisplayResultFragment) manager.findFragmentById(R.id.fragmentDisplay);
-        displayResultFragment.changeResult(data);
+        displayResultFragment.clearText();
+    }
+    @Override
+    public void result() {
+        FragmentManager manager=getFragmentManager();
+        DisplayResultFragment displayResultFragment = (DisplayResultFragment) manager.findFragmentById(R.id.fragmentDisplay);
+        displayResultFragment.changeResult();
     }
 }
